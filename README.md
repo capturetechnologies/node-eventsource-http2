@@ -1,4 +1,4 @@
-# node-eventsource
+# node-eventsource-http2
 
 ## why
 Eventsource nodejs client https://github.com/EventSource/eventsource
@@ -8,7 +8,7 @@ This package fixes it build on top of `http2`, so it fully supports it
 
 ## install
 ```
-npm install node-eventsource
+npm install node-eventsource-http2
 ```
 
 ## usage
