@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "incremental": true,
+    "strict": true,
+    "module": "commonjs",
+    "declaration": true,
+    "declarationMap": true,
+    "composite": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "sourceMap": false,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "rootDir": "./src",
+    "outDir": "./lib",
+    "lib": ["dom", "es2017"]
+  },
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts",
+    "lib"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "name": "node-eventsource",
+  "version": "1.0.0",
+  "description": "Nodejs EventSource implementation with http2 support",
+  "author": "",
+  "license": "MIT",
+  "main": "lib/index",
+  "typings": "lib/index",
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rm -rf lib && tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^12.0.4"
+  }
+}
