@@ -1,5 +1,5 @@
 {
-  "name": "node-eventsource",
+  "name": "node-eventsource-http2",
   "version": "1.0.0",
   "description": "Nodejs EventSource implementation with http2 support",
   "author": "Phil Romanov (@fletcherist)",
@@ -20,6 +20,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/capturetechnologies/node-eventsource.git"
+    "url": "git+https://github.com/capturetechnologies/node-eventsource-http2.git"
   }
 }
