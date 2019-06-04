@@ -31,4 +31,5 @@ export declare class EventSource extends EventEmitter {
     private parseEventStreamLine;
     private connect;
 }
+export default EventSource;
 //# sourceMappingURL=index.d.ts.map

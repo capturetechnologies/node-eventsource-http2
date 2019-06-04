@@ -188,3 +188,4 @@ export class EventSource extends EventEmitter {
     });
   }
 }
+export default EventSource
