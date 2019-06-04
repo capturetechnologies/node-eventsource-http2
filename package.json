@@ -2,7 +2,7 @@
   "name": "node-eventsource",
   "version": "1.0.0",
   "description": "Nodejs EventSource implementation with http2 support",
-  "author": "",
+  "author": "Phil Romanov (@fletcherist)",
   "license": "MIT",
   "main": "lib/index",
   "typings": "lib/index",
@@ -17,5 +17,9 @@
   },
   "devDependencies": {
     "@types/node": "^12.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/capturetechnologies/node-eventsource.git"
   }
 }
