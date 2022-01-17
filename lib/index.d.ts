@@ -29,7 +29,7 @@ export declare class EventSource extends EventEmitter {
     private lastEventId;
     private request;
     private reconnectInterval;
-    constructor(url: string, opts: EventSourceOpts);
+    constructor(url: string, opts?: EventSourceOpts);
     addEventListener(type: string, callback: (event: MessageEvent) => any): this;
     dispatchEvent(type: string, event: MessageEvent): boolean;
     close(): void;

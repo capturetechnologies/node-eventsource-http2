@@ -41,7 +41,7 @@ export class EventSource extends EventEmitter {
   private lastEventId: string;
   private request: http2.ClientHttp2Stream;
   private reconnectInterval: number;
-  constructor(url: string, opts: EventSourceOpts) {
+  constructor(url: string, opts?: EventSourceOpts) {
     super();
     this.readyState = EventSource.CONNECTING;
 
@@ -53,13 +53,18 @@ export class EventSource extends EventEmitter {
     this.reconnectInterval = 1000;
 
     const client = http2.connect(this.url.origin);
+    let headers = {
+      Accept: "text/event-stream",
+      "Cache-Control": "no-cache",
+    }
+    if (opts?.headers) {
+      headers = { ...headers, ...opts.headers }
+    }
     this.request = client.request({
       ":path": this.url.searchParams
         ? `${this.url.pathname}?${this.url.searchParams.toString()}`
         : this.url.pathname,
-      Accept: "text/event-stream",
-      "Cache-Control": "no-cache",
-      ...opts.headers,
+      ...headers,
     });
     this.connect();
   }
