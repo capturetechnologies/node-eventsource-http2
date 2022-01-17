@@ -76,6 +76,10 @@ export class EventSource extends EventEmitter {
     return true;
   }
 
+  public close(): void {
+    if (!this.request.closed) this.request.close();
+  }
+
   private parseEventStreamLine(
     buf: Buffer,
     pos: number,
