@@ -50,9 +50,11 @@ export class EventSource extends EventEmitter {
 
     const client = http2.connect(this.url.origin);
     this.request = client.request({
-      ':path': this.url.pathname,
-      "Accept": 'text/event-stream',
-      'Cache-Control': 'no-cache',
+      ":path": this.url.searchParams
+        ? `${this.url.pathname}?${this.url.searchParams.toString()}`
+        : this.url.pathname,
+      Accept: "text/event-stream",
+      "Cache-Control": "no-cache",
     });
     this.connect();
   }
