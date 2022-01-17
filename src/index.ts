@@ -24,6 +24,10 @@ export interface MessageEvent {
   source?: string;
 }
 
+export interface EventSourceOpts {
+  headers: http2.OutgoingHttpHeaders
+}
+
 export class EventSource extends EventEmitter {
   private static CONNECTING = 0;
   private static OPEN = 1;
@@ -37,7 +41,7 @@ export class EventSource extends EventEmitter {
   private lastEventId: string;
   private request: http2.ClientHttp2Stream;
   private reconnectInterval: number;
-  constructor(url: string) {
+  constructor(url: string, opts: EventSourceOpts) {
     super();
     this.readyState = EventSource.CONNECTING;
 
@@ -55,6 +59,7 @@ export class EventSource extends EventEmitter {
         : this.url.pathname,
       Accept: "text/event-stream",
       "Cache-Control": "no-cache",
+      ...opts.headers,
     });
     this.connect();
   }

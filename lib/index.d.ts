@@ -1,5 +1,6 @@
 /// <reference types="node" />
 import { EventEmitter } from 'events';
+import http2 from 'http2';
 export interface MessageEventOpts {
     data: string;
     origin?: string;
@@ -13,6 +14,9 @@ export interface MessageEvent {
     lastEventId?: string;
     source?: string;
 }
+export interface EventSourceOpts {
+    headers: http2.OutgoingHttpHeaders;
+}
 export declare class EventSource extends EventEmitter {
     private static CONNECTING;
     private static OPEN;
@@ -25,7 +29,7 @@ export declare class EventSource extends EventEmitter {
     private lastEventId;
     private request;
     private reconnectInterval;
-    constructor(url: string);
+    constructor(url: string, opts: EventSourceOpts);
     addEventListener(type: string, callback: (event: MessageEvent) => any): this;
     dispatchEvent(type: string, event: MessageEvent): boolean;
     private parseEventStreamLine;
