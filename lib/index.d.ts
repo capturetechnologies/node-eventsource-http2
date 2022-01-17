@@ -32,6 +32,7 @@ export declare class EventSource extends EventEmitter {
     constructor(url: string, opts: EventSourceOpts);
     addEventListener(type: string, callback: (event: MessageEvent) => any): this;
     dispatchEvent(type: string, event: MessageEvent): boolean;
+    close(): void;
     private parseEventStreamLine;
     private connect;
 }
